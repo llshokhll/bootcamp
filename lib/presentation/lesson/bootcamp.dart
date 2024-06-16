@@ -7,43 +7,41 @@ class Bootcamp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: MyColors.white,
-          leading: Image.asset(MyIcons.apple,scale: 1.5,color: MyColors.black,),
-          title: Text(
-            "Lesson Nine",
-            style: TextStyle(
-                wordSpacing: 5,
-                decoration: TextDecoration.underline,
-                shadows: [
-                  Shadow(
-                    color: Colors.red.withOpacity(0.7),
-                    blurRadius: 10,
-                    offset: const Offset(-30, 10),
-                  ),
-                  const Shadow(
-                    color: Colors.red,
-                    blurRadius: 10,
-                    offset: Offset(30, -10),
-                  )
-                ]),
-          ),
+    return Scaffold(
+      backgroundColor: MyColors.c_8C56FF,
+      appBar: AppBar(
+        elevation: 0.0,
+        centerTitle: true,
+        backgroundColor: MyColors.c_8C56FF,
+        leading: Image.asset(
+          MyIcons.apple,
+          scale: 1.5,
+          color: MyColors.white,
         ),
-        body: Container(
-          margin: const EdgeInsets.only(left: 50, top: 70),
+        actions: const[
+          Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: Icon(Icons.search,size: 35,color: MyColors.white,)),
+        ],
+        title: const Text(
+          "Lesson NetWok",
+          style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.w900,
+              color: MyColors.white),
+        ),
+      ),
+      body: Center(
+        child: Container(
           width: 200,
           height: 200,
           decoration: BoxDecoration(
-            color: MyColors.c_624DE6,
-            border: Border.all(color: MyColors.c_8C56FF, width: 12),
+            border: Border.all(color: MyColors.white, width: 12),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.network(
-            "https://images.template.net/wp-content/uploads/2016/04/27093219/Pure-Black-Car-Wallpaper.jpg",
-            fit: BoxFit.fill
-          ),
+              "https://images.template.net/wp-content/uploads/2016/04/27093219/Pure-Black-Car-Wallpaper.jpg",
+              fit: BoxFit.fill),
         ),
       ),
     );
