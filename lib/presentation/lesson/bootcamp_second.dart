@@ -1,4 +1,17 @@
+
+//FONTS
+//SVG
+//STATUS BAR
+//INKWELL
+//MATERIAL
+//VOID CALL BACK
+//SIZE DOUBLE INFINITY
+//CARBON WEB
+//PUB DEV
+//PUBSPEC YAML
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:splash/utils/color.dart';
 import 'package:splash/utils/icon.dart';
@@ -11,6 +24,14 @@ class BootcampSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: MyColors.white,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.dark,
+        ),
+        backgroundColor: MyColors.c_624DE6,
+      ),
       body: Center(
         child: Container(
           margin: EdgeInsets.symmetric(horizontal: 20,vertical: 30),
