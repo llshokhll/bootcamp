@@ -1,4 +1,3 @@
-
 //FONTS
 //SVG
 //STATUS BAR
@@ -13,56 +12,71 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:splash/utils/button.dart';
 import 'package:splash/utils/color.dart';
 import 'package:splash/utils/icon.dart';
 import 'package:splash/utils/styles.dart';
 
 class BootcampSecond extends StatelessWidget {
-  const BootcampSecond({super.key, required this.onTap});
-  final VoidCallback onTap;
+  const BootcampSecond({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: MyColors.white,
-          statusBarIconBrightness: Brightness.dark,
-          statusBarBrightness: Brightness.dark,
-        ),
-        backgroundColor: MyColors.c_624DE6,
-      ),
-      body: Center(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20,vertical: 30),
-          child: Material(
-            child: InkWell(
-                borderRadius: BorderRadius.circular(40),
-                highlightColor: MyColors.c_25FF00,
-                onTap: onTap,
-                child: Container(
-                  //color: MyColors.blue_010C4D,
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Button",
-                        style: MyTextStyle.playwriteRegular.copyWith(
-                            fontSize: 20,
-                            color: MyColors.c_624DE6,
-                            fontWeight: FontWeight.w900),
-                      ),
-                      SvgPicture.asset(
-                        MyIcons.add,
-                        width: 200,
-                      ),
-                    ],
-                  ),
-                )),
+        appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: MyColors.white,
+            statusBarIconBrightness: Brightness.light,
+            statusBarBrightness: Brightness.dark,
           ),
+          backgroundColor: MyColors.c_624DE6,
         ),
-      ),
-    );
+        body: Center(
+            child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          child: Column(
+            children: [
+              ...buttonWidget(),
+              SizedBox(height: 20,),
+              buttonCreate("Button", () {
+                print("bosildi");
+              }),
+              SizedBox(height: 20,),
+              ButtonWidget(onTap: () {
+                print("Button Widget Working");
+              },),
+            ],
+          ),
+        )));
   }
+}
+
+//Create List Widget
+List<Widget> buttonWidget() {
+  List<Widget> result = [];
+  result.add(const Icon(Icons.add));
+  result.add(const Icon(Icons.cabin));
+  result.add(const Icon(Icons.hail_outlined));
+  return result;
+}
+
+Widget buttonCreate(String letter, VoidCallback onTap) {
+  return InkWell(
+    onTap: onTap,
+    child: Container(
+      //margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      height: 60,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: MyColors.c_624DE6,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Center(
+          child: Text(
+        letter,
+        style: MyTextStyle.playwriteRegular500
+            .copyWith(color: MyColors.c_25FF00, fontSize: 20),
+      )),
+    ),
+  );
 }
