@@ -11,6 +11,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:splash/utils/button.dart';
 import 'package:splash/utils/color.dart';
@@ -24,30 +25,75 @@ class BootcampSecond extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: Text("Expanded",style: MyTextStyle.playwriteRegular500.copyWith(color: MyColors.white,fontSize: 20.sp),),
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: MyColors.white,
             statusBarIconBrightness: Brightness.light,
             statusBarBrightness: Brightness.dark,
           ),
-          backgroundColor: MyColors.c_624DE6,
+          backgroundColor: MyColors.blue_02116C,
         ),
-        body: Center(
-            child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          child: Column(
-            children: [
-              ...buttonWidget(),
-              SizedBox(height: 20,),
-              buttonCreate("Button", () {
-                print("bosildi");
-              }),
-              SizedBox(height: 20,),
-              ButtonWidget(onTap: () {
-                print("Button Widget Working");
-              },),
-            ],
-          ),
-        )));
+        body: Column(
+          children: [
+            Expanded(
+              flex: 20,
+                child: Container(
+                  width: double.infinity,
+              color: MyColors.c_624DE6,
+                  child: TextButton.icon(onPressed: () {
+                    print("object");
+                  },icon: Icon(Icons.bubble_chart,color: MyColors.white,size: 20.sp,), label: Text("Button",style: TextStyle(color: MyColors.white,fontSize: 20.sp),),
+
+                  ),
+            )),
+            Expanded(
+              flex: 40,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: MyColors.black,
+                  shape: BoxShape.circle,
+                ),
+                            width: 200.w,
+
+                          ),
+            ),
+            Expanded(
+              flex: 40,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 30,
+                        child:
+                          Container(
+                          decoration: BoxDecoration(
+                            color: MyColors.c_8C56FF,
+                          ),
+                        ),
+                      ),
+                  Expanded(
+                    flex: 30,
+                    child: GestureDetector(
+                      onTap: (){
+                        print("ishladi");
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: MyColors.green_25FF00,
+                        ),
+                      ),
+                    ),),
+                  Expanded(
+                    flex: 40,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: MyColors.blue_010C4D,
+                      ),
+                    ),),
+                ],
+              ),
+            ),
+          ],
+        ),);
   }
 }
 
@@ -75,7 +121,7 @@ Widget buttonCreate(String letter, VoidCallback onTap) {
           child: Text(
         letter,
         style: MyTextStyle.playwriteRegular500
-            .copyWith(color: MyColors.c_25FF00, fontSize: 20),
+            .copyWith(color: MyColors.green_25FF00, fontSize: 20),
       )),
     ),
   );

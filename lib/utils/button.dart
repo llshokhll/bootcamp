@@ -22,7 +22,7 @@ class ButtonWidget extends StatelessWidget {
             // end: FractionalOffset(-2,3),
             tileMode: TileMode.repeated,
             colors: [
-              MyColors.c_25FF00,
+              MyColors.green_25FF00,
               MyColors.blue_02116C,
               MyColors.c_8C56FF,
             ],
