@@ -87,7 +87,7 @@ class ThemeScreen extends StatelessWidget {
             child: Container(
               height: 50,
               width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20).r,
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20).r,
               color: MyColors.yellow_CD00FF,
             ),
           ),
