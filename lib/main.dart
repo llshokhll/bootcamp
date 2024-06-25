@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           theme: MyAppTheme.lightTheme,//light
           darkTheme: MyAppTheme.darkTheme,//dark
           debugShowCheckedModeBanner: false,
-          home: TextFiledScreen(),
+          home: ThemeScreen(),
         );
       },
     );

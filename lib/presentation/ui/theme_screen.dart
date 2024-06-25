@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:splash/utils/color.dart';
 
 class ThemeScreen extends StatelessWidget {
   const ThemeScreen({super.key});
@@ -18,66 +19,77 @@ class ThemeScreen extends StatelessWidget {
           color: Theme.of(context).canvasColor,
         ),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Expanded(
-            flex: 40,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width.w,
-                  color: Colors.red,
+          Column(
+            children: [
+              Expanded(
+                flex: 40,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width.w,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width.w,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width.w,
+                      color: Colors.green,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width.w,
+                      color: Colors.yellow,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width.w,
+                      color: Colors.orange,
+                    ),
+                  ],
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width.w,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width.w,
-                  color: Colors.green,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width.w,
-                  color: Colors.yellow,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width.w,
-                  color: Colors.orange,
-                ),
-              ],
-            ),
-          ),
-          const Expanded(
-              flex: 10,
-              child: SizedBox()),
-          Expanded(
-              flex: 50,
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height.h,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height.h,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height.h,
-                    color: Colors.green,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height.h,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height.h,
-                    color: Colors.orange,
-                  ),
-                ],
               ),
+              const Expanded(flex: 5, child: SizedBox()),
+              Expanded(
+                flex: 30,
+                child: ListView(
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height.h,
+                      color: Colors.red,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height.h,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height.h,
+                      color: Colors.green,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height.h,
+                      color: Colors.yellow,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height.h,
+                      color: Colors.orange,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 50,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20).r,
+              color: MyColors.yellow_CD00FF,
+            ),
           ),
         ],
       ),
