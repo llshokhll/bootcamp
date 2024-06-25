@@ -20,6 +20,7 @@ class MyColors {
   static const green_53E88B = Color(0xFF53E88B);
   static const green_15BE77 = Color(0xFF15BE77);
   static const orange_DA6317 = Color(0xFFDA6317);
+  static const yellow_CD00FF = Color(0xFFFFCD00);
   static const red_FF0000 = Color(0xFFFF0000);
   static const orange_F9A84D = Color(0xFFF9A84D);
   static const gray_3B3B3B = Color(0xFF3B3B3B);

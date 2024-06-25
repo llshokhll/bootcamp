@@ -11,6 +11,10 @@ class FavoriteFood extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width.w;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        title: Text("Theme",style: Theme.of(context).textTheme.headlineLarge,),
+      ),
       body: Stack(
         children: [
           Container(
@@ -34,13 +38,12 @@ class FavoriteFood extends StatelessWidget {
                         children: [
                           Text(
                             "Find Your",
-                            style: MyTextStyle.playwriteRegular500.copyWith(
-                                color: MyColors.black, fontSize: 30.sp),
+                            style: Theme.of(context).textTheme.headlineLarge,
                           ),
+                          SizedBox(height: 5.h,),
                           Text(
                             "Favorite Food",
-                            style: MyTextStyle.playwriteRegular500.copyWith(
-                                color: MyColors.black, fontSize: 30.sp),
+                            style: Theme.of(context).textTheme.headlineLarge,
                           ),
                         ],
                       ),
@@ -101,7 +104,7 @@ class FavoriteFood extends StatelessWidget {
           )
         ],
       ),
-      backgroundColor: MyColors.white_FEFEFF,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }
 }
